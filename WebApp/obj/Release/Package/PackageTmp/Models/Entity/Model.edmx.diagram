@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5c1e401bf0dc4e5993af2242bb2a099d" Name="Diagram1">
+        <EntityTypeShape EntityType="WebDBModel.reduktor" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDBModel.reduktorGovde" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDBModel.reduktorSeri" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDBModel.reduktorTip" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDBModel.seriGovdeTipEslesme" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDBModel.status" Width="1.5" PointX="3.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDBModel.timestamp" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDBModel.users" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="WebDBModel.FK_reduktor_seriGovdeTipEslesme" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDBModel.FK_reduktor_timestamp" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDBModel.FK_reduktorGovde_timestamp" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDBModel.FK_seriGovdeTipEslesme_reduktorGovde" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDBModel.FK_reduktorSeri_timestamp" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDBModel.FK_seriGovdeTipEslesme_reduktorSeri" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDBModel.FK_reduktorTip_timestamp" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDBModel.FK_seriGovdeTipEslesme_reduktorTip" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDBModel.FK_seriGovdeTipEslesme_timestamp" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDBModel.FK_user_status" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDBModel.FK_user_timestamp" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

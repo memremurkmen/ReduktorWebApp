@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebDBModelStoreContainer" CdmEntityContainer="WebDBEntities">
+    <EntitySetMapping Name="reduktor">
+      <EntityTypeMapping TypeName="WebDBModel.reduktor">
+        <MappingFragment StoreEntitySet="reduktor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="serigovdeTipEsId" ColumnName="serigovdeTipEsId" />
+          <ScalarProperty Name="reduktorAdi" ColumnName="reduktorAdi" />
+          <ScalarProperty Name="motorGucu" ColumnName="motorGucu" />
+          <ScalarProperty Name="frekans" ColumnName="frekans" />
+          <ScalarProperty Name="cikisDevri" ColumnName="cikisDevri" />
+          <ScalarProperty Name="cikisMomenti" ColumnName="cikisMomenti" />
+          <ScalarProperty Name="servisFaktoru" ColumnName="servisFaktoru" />
+          <ScalarProperty Name="timestampId" ColumnName="timestampId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reduktorGovde">
+      <EntityTypeMapping TypeName="WebDBModel.reduktorGovde">
+        <MappingFragment StoreEntitySet="reduktorGovde">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="govdeAdi" ColumnName="govdeAdi" />
+          <ScalarProperty Name="timestampId" ColumnName="timestampId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reduktorSeri">
+      <EntityTypeMapping TypeName="WebDBModel.reduktorSeri">
+        <MappingFragment StoreEntitySet="reduktorSeri">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="seriAdi" ColumnName="seriAdi" />
+          <ScalarProperty Name="timestampId" ColumnName="timestampId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reduktorTip">
+      <EntityTypeMapping TypeName="WebDBModel.reduktorTip">
+        <MappingFragment StoreEntitySet="reduktorTip">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipAdi" ColumnName="tipAdi" />
+          <ScalarProperty Name="timestampId" ColumnName="timestampId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="seriGovdeTipEslesme">
+      <EntityTypeMapping TypeName="WebDBModel.seriGovdeTipEslesme">
+        <MappingFragment StoreEntitySet="seriGovdeTipEslesme">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="seriId" ColumnName="seriId" />
+          <ScalarProperty Name="govdeId" ColumnName="govdeId" />
+          <ScalarProperty Name="tipId" ColumnName="tipId" />
+          <ScalarProperty Name="reduktorTipAdi" ColumnName="reduktorTipAdi" />
+          <ScalarProperty Name="timestampId" ColumnName="timestampId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status">
+      <EntityTypeMapping TypeName="WebDBModel.status">
+        <MappingFragment StoreEntitySet="status">
+          <ScalarProperty Name="statusID" ColumnName="statusID" />
+          <ScalarProperty Name="statusName" ColumnName="statusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="WebDBModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="timestamp">
+      <EntityTypeMapping TypeName="WebDBModel.timestamp">
+        <MappingFragment StoreEntitySet="timestamp">
+          <ScalarProperty Name="timestampID" ColumnName="timestampID" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="WebDBModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+          <ScalarProperty Name="timestampId" ColumnName="timestampId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getUyeByUsernameAndPass" FunctionName="WebDBModel.Store.getUyeByUsernameAndPass">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WebDBModel.getUyeByUsernameAndPass_Result">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+          <ScalarProperty Name="timestampId" ColumnName="timestampId" />
+          <ScalarProperty Name="statusID1" ColumnName="statusID1" />
+          <ScalarProperty Name="statusName" ColumnName="statusName" />
+          <ScalarProperty Name="timestampID1" ColumnName="timestampID1" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="WebDBModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="WebDBModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="WebDBModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="WebDBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WebDBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="WebDBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WebDBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="WebDBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="WebDBModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

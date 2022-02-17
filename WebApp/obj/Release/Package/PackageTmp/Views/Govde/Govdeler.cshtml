@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebApp.Models.Entity.reduktorGovde>
+
+@{
+    ViewBag.Title = "Govdeler";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Govdeler</h2>
+
+<p>
+    @Html.ActionLink("Create New", "GovdeEkle")
+</p>
+<table class="table">
+    <tr>
+        <th>Gövde ID</th>
+        <th>Gövde Adı</th>
+        <th>
+            Eklenme Tarihi
+        </th>
+        <th>
+            Güncellenme Tarihi
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.govdeAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.timestamp.create_time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.timestamp.update_time)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "GovdeGetir", new { id = item.id }) |
+                @Html.ActionLink("Delete", "GovdeSil", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>

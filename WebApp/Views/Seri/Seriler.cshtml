@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApp.Models.Entity.reduktorSeri>
+
+@{
+    ViewBag.Title = "Seriler";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Seriler</h2>
+
+<p>
+    @Html.ActionLink("Seri Ekle", "SeriEkle")
+</p>
+<table class="table">
+    <tr>
+        <th>Seri ID</th>
+        <th>Seri Adı</th>
+        <th>
+            Eklenme Tarihi
+        </th>
+        <th>
+            Güncellenme Tarihi
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.seriAdi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.timestamp.create_time)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.timestamp.update_time)
+    </td>
+    <td>
+        @Html.ActionLink("Düzenle", "SeriGetir", new { id = item.id }) |
+        @Html.ActionLink("Sil", "SeriSil", new { id = item.id })
+    </td>
+</tr>
+}
+
+</table>

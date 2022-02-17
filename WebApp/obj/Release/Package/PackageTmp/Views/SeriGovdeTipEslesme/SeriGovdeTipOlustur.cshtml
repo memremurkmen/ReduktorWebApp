@@ -1,0 +1,100 @@
+﻿@model WebApp.Models.Entity.seriGovdeTipEslesme
+
+@{
+    ViewBag.Title = "SeriGovdeTipOlustur";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>SeriGovdeTipOlustur</h2>
+
+
+@using (Html.BeginForm("SeriGovdeTipEkle", "SeriGovdeTipEslesme", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.seriId, "Seri", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @{
+                    WebApp.Models.Entity.WebDBEntities datab1 = new WebApp.Models.Entity.WebDBEntities();
+                    List<WebApp.Models.Entity.reduktorSeri> ListSeri = datab1.reduktorSeri.ToList();
+
+                    <select name="seriId" class="form-control">
+                        @{
+                            <option value="" disabled hidden selected>Seri Seç</option>
+                            foreach (WebApp.Models.Entity.reduktorSeri rs in ListSeri)
+                            {
+                                <option value="@rs.id">@rs.seriAdi</option>
+                            }
+                        }
+                    </select>
+                }
+                @Html.ValidationMessageFor(model => model.seriId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.govdeId, "Gövde", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @{
+                    WebApp.Models.Entity.WebDBEntities datab2 = new WebApp.Models.Entity.WebDBEntities();
+                    List<WebApp.Models.Entity.reduktorGovde> ListGovde = datab2.reduktorGovde.ToList();
+
+                    <select name="govdeId" class="form-control">
+                        @{
+                            <option value="" disabled hidden selected>Gövde Seç</option>
+                            foreach (WebApp.Models.Entity.reduktorGovde rg in ListGovde)
+                            {
+                                <option value="@rg.id">@rg.govdeAdi</option>
+                            }
+                        }
+                    </select>
+                }
+                @Html.ValidationMessageFor(model => model.govdeId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.tipId, "Tip", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @{
+                    WebApp.Models.Entity.WebDBEntities datab3 = new WebApp.Models.Entity.WebDBEntities();
+                    List<WebApp.Models.Entity.reduktorTip> ListTip = datab3.reduktorTip.ToList();
+
+                    <select name="tipId" class="form-control">
+                        @{
+                            <option value="" disabled hidden selected>Tip Seç</option>
+                            foreach (WebApp.Models.Entity.reduktorTip rt in ListTip)
+                            {
+                                <option value="@rt.id">@rt.tipAdi</option>
+                            }
+                        }
+                    </select>
+                }
+                @Html.ValidationMessageFor(model => model.tipId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.reduktorTipAdi, "Redüktör Tip Adı", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.reduktorTipAdi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.reduktorTipAdi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Oluştur" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "SeriGovdeTipler")
+</div>
+

@@ -1,0 +1,28 @@
+﻿@using WebApp.Models.Entity
+@model List<reduktorTip>
+@{
+    ViewBag.Title = "Tipler";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Tipler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>TİP ID</th>
+        <th>TİP ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var tp in Model)
+    {
+        <tr>
+            <td>@tp.id</td>
+            <td>@tp.tipAdi</td>
+            <td><a href="/Tip/TipSil/@tp.id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Tip/TipGetir/@tp.id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+}
+
+</table>
+<a href="/Tip/TipEkle/" class="btn btn-primary">Yeni Tip Ekle</a>

@@ -1,0 +1,19 @@
+﻿@model WebApp.Models.Entity.reduktorTip
+
+@{
+    ViewBag.Title = "TipEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>TipEkle</h2>
+
+<form class="form-group" method="post">
+    <div style="margin-top:15px">
+        <label>Tip Adı</label>
+        @Html.TextBoxFor(x => x.tipAdi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.tipAdi, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-primary" id="Btn1">Tip Ekle</button>
+    </div>
+</form>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WebApp.Models.Entity.seriGovdeTipEslesme>
+
+@{
+    ViewBag.Title = "SeriGovdeTipler";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>SeriGovdeTipler</h2>
+
+<p>
+    @Html.ActionLink("Create New", "SeriGovdeTipOlustur")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            SERİ ADI
+        </th>
+        <th>
+            GÖVDE ADI
+        </th>
+        <th>
+            TİP ADI
+        </th>
+        <th>
+            REDÜKTÖR TİP ADI
+        </th>
+        <th>
+            Eklenme Tarihi
+        </th>
+        <th>
+            Güncellenme Tarihi
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.reduktorSeri.seriAdi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.reduktorGovde.govdeAdi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.reduktorTip.tipAdi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.reduktorTipAdi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.timestamp.create_time)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.timestamp.update_time)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "SeriGovdeTipGetir", new { id = item.id }) |
+        @Html.ActionLink("Delete", "SeriGovdeTipSil", new { id = item.id })
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,28 @@
+﻿@using WebApp.Models.Entity
+@model List<reduktorSeri>
+@{
+    ViewBag.Title = "Seriler";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Seriler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>SERİ ID</th>
+        <th>SERİ ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var sr in Model)
+    {
+        <tr>
+            <td>@sr.id</td>
+            <td>@sr.seriAdi</td>
+            <td><a href="/Seri/SeriSil/@sr.id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Seri/SeriGetir/@sr.id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+}
+
+</table>
+<a href="/Seri/SeriEkle/" class="btn btn-primary">Yeni Seri Ekle</a>

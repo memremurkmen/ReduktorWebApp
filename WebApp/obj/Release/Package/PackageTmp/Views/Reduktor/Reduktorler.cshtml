@@ -1,0 +1,81 @@
+﻿@model IEnumerable<WebApp.Models.Entity.reduktor>
+
+@{
+    ViewBag.Title = "Reduktorler";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Reduktorler</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ReduktorOlustur")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Redüktör Tip Adı
+        </th>
+        <th>
+            Redüktör Adı
+        </th>
+        <th>
+            Motor Gücü
+        </th>
+        <th>
+            Frekans
+        </th>
+        <th>
+            Çıkış Devri
+        </th>
+        <th>
+            Çıkış Momenti
+        </th>
+        <th>
+            Servis Faktörü
+        </th>
+        <th>
+            Eklenme Tarihi
+        </th>
+        <th>
+            Güncellenme Tarihi
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.seriGovdeTipEslesme.reduktorTipAdi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.reduktorAdi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.motorGucu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.frekans)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.cikisDevri)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.cikisMomenti)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.servisFaktoru)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.timestamp.create_time)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.timestamp.update_time)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "ReduktorGetir", new { id = item.id }) |
+        @Html.ActionLink("Delete", "ReduktorSil", new { id = item.id })
+    </td>
+</tr>
+}
+
+</table>
